@@ -36,7 +36,7 @@
                     <input type="text" placeholder="Enter your email" name="email" id="email" value="{{ old('email') }}" class="max-w-33 md:max-w-39 w-full text-sm md:text-lg ">
                 </div>
             </div>
-            <label for="naem" class="p-1">Subject</label>
+            <label for="name" class="p-1">Subject</label>
             <input type="text" placeholder="Enter the subject" name="subject" id="subject" value="{{ old('subject') }}" class="text-sm md:text-lg">
             <label for="message" class="p-1">Message</label>
             <textarea name="message" id="message"> {{ old('message') }}</textarea>

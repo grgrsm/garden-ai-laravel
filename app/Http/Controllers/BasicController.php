@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactsRequest;
+use App\Models\Message;
+
 class BasicController extends Controller
 {
     public function index()
@@ -23,6 +25,14 @@ class BasicController extends Controller
 
     public function submit(ContactsRequest $request)
     {
-        $request->validate();
+        //$request->validate();
+        $message = new Message();
+        $message->name = $request->input("name");
+        $message->email = $request->input("email");
+        $message->subject = $request->input("subject");
+        $message->text = $request->input("message");
+        $message->save();
+
+        return redirect()->route("home");
     }
 }
